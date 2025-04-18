@@ -1,0 +1,13 @@
+﻿services:
+  master-api-redis-cache-service:
+    container_name: master-api-redis-cache-service
+    build:
+      context: .
+      dockerfile: Dockerfile    
+    image: datastackdevops/master-api-redis-cache-service:0.0.2
+   
+    ports:     
+      - 7012:80        
+    volumes:        
+      - ./logs:/app\Logs/:rw
+
