@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GZjrUyQiD8M=",
+  "dgSpecHash": "3TMdwpt1+sQ=",
   "success": true,
-  "projectFilePath": "D:\\Datastack\\ERP\\RedisService\\RedisService\\RedisService\\RedisService.csproj",
+  "projectFilePath": "D:\\Datastack\\ERP\\RedisService\\RedisService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onkar.kumbhar\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\onkar.kumbhar\\.nuget\\packages\\elasticsearch.net\\7.17.5\\elasticsearch.net.7.17.5.nupkg.sha512",

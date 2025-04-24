@@ -40,6 +40,7 @@ namespace RedisService
 
             _logger.LogInformation("Redis Background Service is stopping.");
         }
+        
         private async Task StoreProductDetailsInRedisCache()
         {
             try
