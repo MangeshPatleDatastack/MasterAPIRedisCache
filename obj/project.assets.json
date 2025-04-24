@@ -2570,11 +2570,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Datastack\\ERP\\RedisService\\RedisService\\RedisService\\RedisService.csproj",
+      "projectUniqueName": "D:\\Datastack\\ERP\\RedisService\\RedisService.csproj",
       "projectName": "RedisService",
-      "projectPath": "D:\\Datastack\\ERP\\RedisService\\RedisService\\RedisService\\RedisService.csproj",
+      "projectPath": "D:\\Datastack\\ERP\\RedisService\\RedisService.csproj",
       "packagesPath": "C:\\Users\\onkar.kumbhar\\.nuget\\packages\\",
-      "outputPath": "D:\\Datastack\\ERP\\RedisService\\RedisService\\RedisService\\obj\\",
+      "outputPath": "D:\\Datastack\\ERP\\RedisService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
