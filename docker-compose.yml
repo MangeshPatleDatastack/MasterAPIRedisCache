@@ -4,7 +4,7 @@
     build:
       context: .
       dockerfile: Dockerfile    
-    image: datastackdevops/master-api-redis-cache-service:0.0.2
+    image: datastackdevops/master-api-redis-cache-service:0.0.3
    
     ports:     
       - 7012:80        

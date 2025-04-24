@@ -39,7 +39,7 @@ namespace RedisService.Utilities.ResponseDTO.GetProductDetails
 
             public string? SchemeTo { get; set; }
 
-            public long SalesQty { get; set; }
+            public long SalesQuantity { get; set; }
 
             public long BonusQuantity { get; set; }
         }
