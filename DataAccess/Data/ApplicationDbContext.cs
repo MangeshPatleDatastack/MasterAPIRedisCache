@@ -17,6 +17,6 @@ public partial class ApplicationDbContext : DbContext
     }      
     public virtual DbSet<Product> Products { get; set; }
     public virtual DbSet<ProductBatch> ProductBatches { get; set; }
-
+    public virtual DbSet<Location> Locations { get; set; }
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

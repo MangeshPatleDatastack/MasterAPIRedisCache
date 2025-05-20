@@ -2,6 +2,7 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using RedisService.Utilities.ResponseDTO.GetProductDetails;
+using RedisService.Utilities.ResponseDTO.LocationDTO;
 using StackExchange.Redis;
 using WorkerService.DataAccess.Repository.IRepository;
 
@@ -51,7 +52,7 @@ namespace RedisService
                 List<GetProductDetails.ProductDetails> products =  await _unitOfWork.Product.GetAllProductDetails();
 
                 List<GetProductDetails.ProductBatch> productBatches = await _unitOfWork.Product.GetProductBatches();
-            
+                List<Locations.Entity> Depots = await _unitOfWork.Location.Depots();
 
                 var db = _redis.GetDatabase();
 
@@ -61,21 +62,30 @@ namespace RedisService
                     string productJson = JsonSerializer.Serialize(product);
                     await db.HashSetAsync("Products", product.ProductId.ToString(), productJson);
                 }
-
-                // Store product batches in Redis Hash
                 foreach (var batch in productBatches)
                 {
                     string batchJson = JsonSerializer.Serialize(batch);
                     await db.HashSetAsync("ProductBatches", batch.BatchId.ToString(), batchJson);
                 }
+                foreach (var depot in Depots)
+                {
+                    string depotJson = JsonSerializer.Serialize(depot);
+                    await db.HashSetAsync("Depots", depot.Id.ToString(), depotJson);
+                }
+
                 await db.KeyExpireAsync("Products", TimeSpan.FromDays(1)); 
                 await db.KeyExpireAsync("ProductBatches", TimeSpan.FromDays(1));
-               _logger.LogInformation("Product details stored successfully in Redis.");
+                await db.KeyExpireAsync("Depots", TimeSpan.FromDays(1));
+                _logger.LogInformation("Product details stored successfully in Redis.");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error while storing product details in Redis.");
             }
     }
+        public async Task StoreDepots()
+        {
+
+        }
     }
 }

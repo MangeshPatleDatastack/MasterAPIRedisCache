@@ -1,4 +1,6 @@
 
+using MasterAPI.DataAccess.Repository;
+using MasterAPI.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore.Storage;
 using RedisService.DataAccess.Data;
 using RedisService.DataAccess.Repository;
@@ -14,10 +16,12 @@ namespace WorkerService.DataAccess.Repository
             _db = db;
             SP_Call = new SP_Call(_db);
             Product=new ProductRepository(_db);
+            Location=new LocationRepository(_db);
 
         }
 		public ISP_Call SP_Call { get; private set; }
         public IProductRepository Product { get; private set; }
+        public ILocationRepository Location { get; private set; }
         public void Dispose()
         {
             _db.Dispose();
