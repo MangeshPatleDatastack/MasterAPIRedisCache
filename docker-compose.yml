@@ -11,3 +11,7 @@
     volumes:        
       - ./logs:/app\Logs/:rw
 
+
+networks:
+  default:
+    name: master-api-redis-cache-service_network
